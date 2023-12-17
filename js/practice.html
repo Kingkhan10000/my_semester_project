@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kingkhan</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var a = 20;
+    var b = 40;
+    var c;
+
+    c = b
+    b = a
+    a = c
+
+    console.log("the A is "+ a);
+    console.log("the B is "+ b);
+
+
+    function removeDuplicates(str) {
+            // Convert the string to an array, split by each character
+            const charArray = str.split('');
+            
+            // Use a Set to store unique characters and filter out duplicates
+            const uniqueChars = [...new Set(charArray)];
+            
+            // Join the array back into a string
+            const result = uniqueChars.join('');
+            
+            return result;
+        }
+
+        window.onload = function() {
+            const inputString = "abbccddefghiff ";
+            const resultString = removeDuplicates(inputString);
+            console.log(resultString);
+        };
+
+        // removeDuplicates("")
+</script>
+</html>

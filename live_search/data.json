@@ -1,0 +1,39 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "shabbir afzal",
+            "email": "shabirafzal9@gmail.com"
+        },
+        {
+            "id": 2,
+            "name": "ahmed",
+            "email": "ahmed@gmail.com"
+        },
+        {
+            "id": 3,
+            "name": "Raja",
+            "email": "raja@gmail.com"
+        },
+        {
+            "id": 4,
+            "name": "Irtaza",
+            "email": "Irtaza@gmail.com"
+        },
+        {
+            "id": 5,
+            "name": "Jameel",
+            "email": "Jameel@gmail.com"
+        },
+        {
+            "id": 6,
+            "name": "Yousuf",
+            "email": "yousuf@gmail.com"
+        },
+        {
+            "id": 7,
+            "name": "Sadaf",
+            "email": "sadaf@gmail.com"
+        }
+    ]
+}
