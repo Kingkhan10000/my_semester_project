@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Add Questions</h2>
+    <form method="post" action="data/data.json">
+        <input type="text" name="answer" id="answer">
+        <input type="submit" value="Add Question">
+    </form>
+</body>
+<script>
+
+    let questions = "http://localhost:3000/questions";
+    let answers = "http://localhost:3000/answers";
+
+    fetch(questions).then(res=>res.json()).then(result=>console.log(result[0].question.text))
+    // fetch(answers).then(res=>res.json()).then(result=>console.log(result))  
+
+    window.addEventListener("scroll",()=>{})
+</script>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+</body>
+<script>
+
+
+    // animationCss(keyframes)
+
+    let body = document.querySelector("body");
+    let main = document.createElement("main");
+    let box = document.createElement("div");
+    let css = document.createElement("style");
+    css.type = "text/css";
+    document.head.appendChild(css);
+
+
+
+    body.style.width = "100%";
+    body.style.height = "100vh";
+    body.style.margin = "0";
+    body.style.padding = "0";
+    body.style.display = "flex";
+    body.style.alignItems = "center";
+    body.style.justifyContent = "center";
+
+    main.style.width = "200px";
+    main.style.height = "200px";
+    main.style.cursor = "pointer";
+    main.style.clipPath = "polygon(0 0, 100% 0%, 100% 100%, 0 100%)";
+    main.style.border = "2px solid black";
+
+    box.style.height = "100%";
+    box.style.width = "100%";
+    box.style.transition = "0.3s";
+    box.style.backgroundColor = "rgb(0, 0, 0)";
+    box.style.clipPath = "polygon(0 0%, 100% 0%, 100% 120%, -5% 100%)";
+    box.style.animation = "dynamic 2s ease infinite";
+    box.style.animationDelay = "1s";
+
+
+    // effect while clicking or it could be like onmouseover , and any relatable
+    main.addEventListener("click", () => {
+        const dynamic_array = {
+            "shape_array": [
+                Math.floor(Math.random() * 100),
+                Math.floor(Math.random() * 100),
+                Math.floor(Math.random() * 100),
+                Math.floor(Math.random() * 100),
+                Math.floor(Math.random() * 100),
+                Math.floor(Math.random() * 100),
+                Math.floor(Math.random() * 100),
+                Math.floor(Math.random() * 100)
+            ],
+            "color_array": [
+                Math.floor(Math.random() * 255),
+                Math.floor(Math.random() * 255),
+                Math.floor(Math.random() * 255)
+            ],
+        }
+        box.style.backgroundColor = "rgb(" + dynamic_array.color_array[0] + "," + dynamic_array.color_array[1] + "," + dynamic_array.color_array[2] + ")";
+        box.style.clipPath = "polygon(" + dynamic_array.shape_array[0] + "%" + dynamic_array.shape_array[1] + "%," + dynamic_array.shape_array[2] + "%" + dynamic_array.shape_array[3] + "%," + dynamic_array.shape_array[4] + "%" + dynamic_array.shape_array[5] + "%," + dynamic_array.shape_array[6] + "%" + dynamic_array.shape_array[7] + "%" + ")";
+
+    });
+
+
+
+
+
+    // animation using keyframes of css
+    // shapeArray = [
+    //     Math.floor(Math.random() * 100),
+    //     Math.floor(Math.random() * 100),
+    //     Math.floor(Math.random() * 100),
+    //     Math.floor(Math.random() * 100),
+    //     Math.floor(Math.random() * 100),
+    //     Math.floor(Math.random() * 100),
+    //     Math.floor(Math.random() * 100),
+    //     Math.floor(Math.random() * 100)
+    // ]
+
+    // var keyframes = "@keyframes dynamic {0% {    clip-path: polygon(0 0%, 100% 0%, 100% 120%, -5% 100%); } 20% {    clip-path: polygon(" + shapeArray[0] + "% " + shapeArray[1] + "%," + shapeArray[2] + "% " + shapeArray[3] + "%," + shapeArray[4] + "% " + shapeArray[5] + "%," + shapeArray[6] + "%" + shapeArray[7] + "%);}40 % { clip- path: polygon(" + shapeArray[0] + "%" + shapeArray[1] + "%, " + shapeArray[2] + "%" + shapeArray[3] + "%," + shapeArray[4] + "%" + shapeArray[5] + "%," + shapeArray[6] + "%" + shapeArray[7] + " %);    }60 % { clip- path: polygon(" + shapeArray[0] + "%" + shapeArray[1] + "%, " + shapeArray[2] + "%" + shapeArray[3] + "%," + shapeArray[4] + "%" + shapeArray[5] + "%," + shapeArray[6] + "%" + shapeArray[7] + " %); }80 % { clip- path: polygon(" + shapeArray[0] + "%" + shapeArray[1] + "%, " + shapeArray[2] + "%" + shapeArray[3] + "%," + shapeArray[4] + "%" + shapeArray[5] + "%," + shapeArray[6] + "%" + shapeArray[7] + " %); 100 % { clip-path: polygon(0 0 %, 100 % 0 %, 100 % 120 %, -5 % 100 %);}}";
+    // css.sheet.insertRule(keyframes, 0)
+    // window.addEventListener("animationiteration", () => {
+    //     const dynamic_array = {
+    //         "shape_array": [
+    //             Math.floor(Math.random() * 100),
+    //             Math.floor(Math.random() * 100),
+    //             Math.floor(Math.random() * 100),
+    //             Math.floor(Math.random() * 100),
+    //             Math.floor(Math.random() * 100),
+    //             Math.floor(Math.random() * 100),
+    //             Math.floor(Math.random() * 100),
+    //             Math.floor(Math.random() * 100)
+    //         ],
+    //         "color_array": [
+    //             Math.floor(Math.random() * 255),
+    //             Math.floor(Math.random() * 255),
+    //             Math.floor(Math.random() * 255)
+    //         ],
+    //     }
+
+    //     var keyframes = "@keyframes dynamic {0% {    background-color:rgb(" + dynamic_array.color_array[0] + "," + dynamic_array.color_array[1] + "," + dynamic_array.color_array[2] + "); clip-path: polygon(0 0%, 100% 0%, 100% 120%, -5% 100%); } 20% {    background-color:rgb(" + dynamic_array.color_array[0] + "," + dynamic_array.color_array[1] + "," + dynamic_array.color_array[2] + "); clip-path: polygon(" + dynamic_array.shape_array[0] + "% " + dynamic_array.shape_array[1] + "%," + dynamic_array.shape_array[2] + "% " + dynamic_array.shape_array[3] + "%," + dynamic_array.shape_array[4] + "% " + dynamic_array.shape_array[5] + "%," + dynamic_array.shape_array[6] + "%" + dynamic_array.shape_array[7] + "%);}40 % { background-color:rgb(" + dynamic_array.color_array[0] + "," + dynamic_array.color_array[1] + "," + dynamic_array.color_array[2] + "); clip-path: polygon(" + dynamic_array.shape_array[0] + "%" + dynamic_array.shape_array[1] + "%, " + dynamic_array.shape_array[2] + "%" + dynamic_array.shape_array[3] + "%," + dynamic_array.shape_array[4] + "%" + dynamic_array.shape_array[5] + "%," + dynamic_array.shape_array[6] + "%" + dynamic_array.shape_array[7] + " %);    }60 % { background-color:rgb(" + dynamic_array.color_array[0] + "," + dynamic_array.color_array[1] + "," + dynamic_array.color_array[2] + "); clip-path: polygon(" + dynamic_array.shape_array[0] + "%" + dynamic_array.shape_array[1] + "%, " + dynamic_array.shape_array[2] + "%" + dynamic_array.shape_array[3] + "%," + dynamic_array.shape_array[4] + "%" + dynamic_array.shape_array[5] + "%," + dynamic_array.shape_array[6] + "%" + dynamic_array.shape_array[7] + " %); }80 % { background-color:rgb(" + dynamic_array.color_array[0] + "," + dynamic_array.color_array[1] + "," + dynamic_array.color_array[2] + "); clip-path: polygon(" + dynamic_array.shape_array[0] + "%" + dynamic_array.shape_array[1] + "%, " + dynamic_array.shape_array[2] + "%" + dynamic_array.shape_array[3] + "%," + dynamic_array.shape_array[4] + "%" + dynamic_array.shape_array[5] + "%," + dynamic_array.shape_array[6] + "%" + dynamic_array.shape_array[7] + " %); 100 % { background-color:rgb(" + dynamic_array.color_array[0] + "," + dynamic_array.color_array[1] + "," + dynamic_array.color_array[2] + "); clip-path: polygon(0 0 %, 100 % 0 %, 100 % 120 %, -5 % 100 %);}}";
+    //     css.sheet.deleteRule(0)
+    //     css.sheet.insertRule(keyframes, 0)
+    // })
+
+    main.appendChild(box)
+    body.appendChild(main)
+</script>
+
+</html>
